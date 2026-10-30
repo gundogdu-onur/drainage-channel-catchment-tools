@@ -1,0 +1,24 @@
+[general]
+name=Drainage Channel Catchment Tools
+qgisMinimumVersion=3.40
+qgisMaximumVersion=3.99
+description=Catchment area of each drainage channel and the length and slope of its longest flow path, from a DEM: the inputs for Rational Method discharge calculations.
+about=Prepares the values used to size drainage channels with the Rational Method: the catchment area of each channel and the length, start and end elevations, elevation drop and mean slope of the longest flow path in its catchment, for all channels in one run.
+    Local Channel Catchments creates one catchment polygon for each drainage channel line. Every DEM cell is assigned to the first channel its D8 flow path reaches, so catchments never overlap and an area captured by an upstream channel is not counted again downstream. An optional polygon mask limits the analysis area, and depressions can be filled in a temporary grid without changing the source DEM.
+    Longest Flow Path by Catchment traces the longest continuous D8 flow path inside each catchment and reports its length, start and end elevations, elevation drop and mean slope: the inputs for time-of-concentration formulas such as Kirpich. Elevations come from the original DEM, and paths that end in a pit, a flat area or at the edge of the DEM are flagged for review.
+    Runoff coefficients, rainfall intensities and discharges are not calculated; they follow the design standard you work with.
+    Requirements: a DEM in a projected CRS with horizontal and vertical units in meters, and drainage channels as a line layer. No external dependencies.
+version=1.0.0
+author=Onur Gündoğdu
+email=gundogdu_onur@outlook.com
+repository=https://github.com/gundogdu-onur/drainage-channel-catchment-tools
+
+hasProcessingProvider=yes
+category=Raster
+changelog=1.0.0 - First public release.
+tags=hydrology,catchment,watershed,drainage,channel,DEM,D8,longest flow path,rational method,time of concentration,stormwater
+homepage=https://github.com/gundogdu-onur/drainage-channel-catchment-tools
+tracker=https://github.com/gundogdu-onur/drainage-channel-catchment-tools/issues
+icon=icon.png
+experimental=False
+deprecated=False
